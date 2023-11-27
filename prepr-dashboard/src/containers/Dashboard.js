@@ -6,8 +6,8 @@ import RowThreeCards from '../components/RowThreeCards'
 const Dashboard = () => {
   return (
     <div className='container-fluid'>
-      <div className=''>
-        <h2>Welcome, Seema. <a className='link-success fs-5' href='#!'>Complete profile</a></h2>
+      <div className='mb-4 mt-2'>
+        <h3 className='fw-semibold'>Welcome, Seema. <a className='fw-normal link-success fs-5' href='#!'>Complete profile</a></h3>
       </div>
       <div className='bg-white p-4' style={{height: '100%'}}>
         <RowOneCards height='25rem'/>
