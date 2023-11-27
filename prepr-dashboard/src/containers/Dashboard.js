@@ -5,7 +5,7 @@ import RowThreeCards from '../components/RowThreeCards'
 
 const Dashboard = () => {
   return (
-    <div className='container-fluid my-3 mx-3'>
+    <div className='container-fluid'>
       <div className=''>
         <h2>Welcome, Seema. <a className='link-success fs-5' href='#!'>Complete profile</a></h2>
       </div>
