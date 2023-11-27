@@ -10,9 +10,9 @@ const Dashboard = () => {
         <h2>Welcome, Seema. <a className='link-success fs-5' href='#!'>Complete profile</a></h2>
       </div>
       <div className='bg-white p-4' style={{height: '100%'}}>
-        <RowOneCards height='18rem'/>
-        <RowTwoCards height='16rem'/>
-        <RowThreeCards height='24rem'/>
+        <RowOneCards height='25rem'/>
+        <RowTwoCards height='20rem'/>
+        <RowThreeCards height='40rem'/>
       </div>
     </div>
 
