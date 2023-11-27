@@ -1,17 +1,18 @@
 import React from 'react'
 import Card from './Card'
+import CardTitle from '../components/CardTitle'
 
 const RowTwoCards = ({height}) => {
   return (
     <div className='row'>
     <div className='col-md-8'>
       <Card height={height}>
-        <h2>Edit Info</h2>
+        <span>Leader Board</span>
       </Card>
     </div>
     <div className='col'>
       <Card height={height}>
-        <h2>Edit Info</h2>
+      <CardTitle title='Card title will be here'/>
       </Card>
     </div>
   </div> 
