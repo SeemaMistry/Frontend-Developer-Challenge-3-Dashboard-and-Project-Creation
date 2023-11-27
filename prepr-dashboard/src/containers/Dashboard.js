@@ -11,17 +11,17 @@ const Dashboard = () => {
 
         {/* row 1 */}
         <div className='row'>
-          <div className='col'>
+          <div className='col-md-4'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
           </div>
-          <div className='col'>
+          <div className='col-md-4'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
           </div>
-          <div className='col'>
+          <div className='col-md-4'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
@@ -30,7 +30,7 @@ const Dashboard = () => {
 
         {/* row 2 */}
         <div className='row'>
-          <div className='col-8'>
+          <div className='col-md-8'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
@@ -44,17 +44,17 @@ const Dashboard = () => {
 
         {/* row 3 */}
         <div className='row'>
-          <div className='col'>
+          <div className='col-md-4'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
           </div>
-          <div className='col'>
+          <div className='col-md-4'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
           </div>
-          <div className='col'>
+          <div className='col-md-4'>
             <Card>
               <h2>Edit Info</h2>
             </Card>
