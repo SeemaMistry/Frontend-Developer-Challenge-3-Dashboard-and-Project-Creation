@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import CardTitle from '../components/CardTitle'
+import RedirectButton from './RedirectButton'
 
 const RowTwoCards = ({height}) => {
   return (
@@ -8,11 +9,13 @@ const RowTwoCards = ({height}) => {
     <div className='col-md-8'>
       <Card height={height}>
         <span>Leader Board</span>
+        <RedirectButton label='View Leaderboard'/>
       </Card>
     </div>
     <div className='col'>
       <Card height={height}>
-      <CardTitle title='Card title will be here'/>
+        <CardTitle title='Card title will be here'/>
+        <RedirectButton label='Explore more'/>
       </Card>
     </div>
   </div> 
