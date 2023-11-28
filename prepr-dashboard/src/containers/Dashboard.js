@@ -12,7 +12,7 @@ const Dashboard = () => {
       <div className='bg-white p-4' style={{height: '100%'}}>
         <RowOneCards height='27rem'/>
         <RowTwoCards height='27rem'/>
-        <RowThreeCards height='40rem'/>
+        <RowThreeCards height='25rem'/>
       </div>
     </div>
 
