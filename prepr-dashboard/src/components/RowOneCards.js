@@ -28,7 +28,7 @@ const RowOneCards = ({height}) => {
       <Card height={height}>
         <div className='d-flex justify-content-between'>
           <CardTitle title='My Progress'/>
-          <div className='shadow-sm'>
+          <div className='shadow'>
             <button className={`${myProgressBtnClasses}`} disabled>Challenges</button>
             <button className={`${myProgressBtnClasses}`} disabled>Labs</button>
             <button className={`${myProgressBtnClasses}`} disabled>Resources</button>
