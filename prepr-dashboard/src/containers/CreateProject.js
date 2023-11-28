@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 import Description from '../components/Description'
 import Card from '../components/Card'
 import CardTitle from '../components/CardTitle'
@@ -56,7 +57,14 @@ const CreateProject = () => {
 
         </Card>
         {/* cancel and submit buttons */}
-        <RedirectButton label='Submit'/>
+        <div className='d-flex justify-content-evenly'>
+          <RedirectButton label=''>
+              <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Cancel</Link>
+          </RedirectButton>
+          <RedirectButton label=''>
+            <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Submit</Link>
+        </RedirectButton>
+        </div>
       </form>  
       <div>
         <span>title: {title}</span><br></br>
