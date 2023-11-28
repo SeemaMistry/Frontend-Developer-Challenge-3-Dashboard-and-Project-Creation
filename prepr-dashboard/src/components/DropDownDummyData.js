@@ -35,3 +35,15 @@ export const requiredSkillsList = {
     defaultSelected: 'Please code multiple inputs',
     options: ['Please add data', 'Please add data']
 }
+
+export const activeChallengesList = {
+    label: 'Active Challenge', 
+    defaultSelected: 'Select Challenge',
+    options: ['Creating a Project', 'Complete Your Profile', 'Exploring Labs and Challenges']
+}
+
+export const associatedLabsList = {
+    label: 'Associated Lab', 
+    defaultSelected: 'Select Lab',
+    options: ['No results found.']
+}

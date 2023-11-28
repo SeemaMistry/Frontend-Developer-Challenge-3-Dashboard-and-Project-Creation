@@ -6,7 +6,7 @@ import RedirectButton from '../components/RedirectButton'
 import TextInput from '../components/TextInput'
 import DropDownInput from '../components/DropDownInput'
 import CheckboxInput from '../components/CheckboxInput'
-import { labsList, challengesList, organizationList, recruitingStatusList, requiredSkillsList } from '../components/DropDownDummyData'
+import { recruitingStatusList, requiredSkillsList, activeChallengesList, associatedLabsList } from '../components/DropDownDummyData'
 
 const CreateProject = () => {
   // retireve project data to save for dashboard display
@@ -35,8 +35,8 @@ const CreateProject = () => {
           <TextInput onSetFormInput={onSetFormInput} label='Title' value={title} name='title' placeholder='Max. 150 Characters' isRequired={true}/>
           <TextInput onSetFormInput={onSetFormInput} label='Description' value={description} name='description' placeholder='Max. 300 Characters' isRequired={true}/>
           <TextInput onSetFormInput={onSetFormInput} label='Project Slug' name='Project Slug' placeholder='Project slug' isRequired={true}/>
-          <DropDownInput dropDownOptions={challengesList} nameString='activeChallenge' onSetFormInput={onSetFormInput}/>
-          <DropDownInput dropDownOptions={labsList} nameString='labslist' onSetFormInput={onSetFormInput}/>
+          <DropDownInput dropDownOptions={activeChallengesList} nameString='activeChallenge' onSetFormInput={onSetFormInput}/>
+          <DropDownInput dropDownOptions={associatedLabsList} nameString='labslist' onSetFormInput={onSetFormInput}/>
           <CheckboxInput label='Allow users outside your team to view your project'/>
           <CheckboxInput label='Allow users outside your team to download your project files' />
         </Card>
