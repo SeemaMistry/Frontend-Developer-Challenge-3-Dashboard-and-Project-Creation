@@ -33,9 +33,9 @@ const StudentCourseWork = ({boxContent}) => {
             </div>
             {isButton ? 
                 <div className=''>
-                    <button className='btn btn-success'>
+                    <RedirectButton label=''>
                         <Link style={{textDecoration: 'none', color: 'white'}} to={buttonUrl}>Create +</Link>
-                    </button>
+                    </RedirectButton>
                 </div> 
                 : <></>
             }
