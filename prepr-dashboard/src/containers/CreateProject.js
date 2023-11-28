@@ -33,13 +33,20 @@ const CreateProject = () => {
         {/* project overview box */}
         <Card>
           <CardTitle title='Project Overview'/>
-          <TextInput onSetFormInput={onSetFormInput} label='Title' value={title} name='title' placeholder='Max. 150 Characters' isRequired={true}/>
-          <TextInput onSetFormInput={onSetFormInput} label='Description' value={description} name='description' placeholder='Max. 300 Characters' isRequired={true}/>
+          <div className='row'>
+          <div className='col-md-6'>
+            <TextInput onSetFormInput={onSetFormInput} label='Title' value={title} name='title' placeholder='Max. 150 Characters' isRequired={true}/>
+            <TextInput onSetFormInput={onSetFormInput} label='Description' value={description} name='description' placeholder='Max. 300 Characters' isRequired={true}/>
+            <CheckboxInput label='Allow users outside your team to view your project'/>
+            <CheckboxInput label='Allow users outside your team to download your project files' />
+          </div>
+          <div className='col-md-6'> 
           <TextInput onSetFormInput={onSetFormInput} label='Project Slug' name='Project Slug' placeholder='Project slug' isRequired={true}/>
-          <DropDownInput dropDownOptions={activeChallengesList} nameString='activeChallenge' onSetFormInput={onSetFormInput}/>
-          <DropDownInput dropDownOptions={associatedLabsList} nameString='labslist' onSetFormInput={onSetFormInput}/>
-          <CheckboxInput label='Allow users outside your team to view your project'/>
-          <CheckboxInput label='Allow users outside your team to download your project files' />
+            <DropDownInput dropDownOptions={activeChallengesList} nameString='activeChallenge' onSetFormInput={onSetFormInput}/>
+            <DropDownInput dropDownOptions={associatedLabsList} nameString='labslist' onSetFormInput={onSetFormInput}/>
+          </div>
+          </div>
+         
         </Card>
         {/* upload banner image box */}
         <Card>
@@ -50,10 +57,17 @@ const CreateProject = () => {
         <Card>
           <CardTitle title='Build Your Team'/>
           <Description description='Building a team is important for your project.'/>
-          <DropDownInput dropDownOptions={recruitingStatusList} nameString='recruitingStatus' onSetFormInput={onSetFormInput}/>
-          <DropDownInput dropDownOptions={requiredSkillsList} nameString='requiredSkills' onSetFormInput={onSetFormInput}/>
+          <div className='row'>
+            <div className='col-md-6'>
+              <DropDownInput dropDownOptions={recruitingStatusList} nameString='recruitingStatus' onSetFormInput={onSetFormInput}/>
+              <CheckboxInput label='Create project team chat' />
+            </div>
+            <div className='col-md-6'>
+              <DropDownInput dropDownOptions={requiredSkillsList} nameString='requiredSkills' onSetFormInput={onSetFormInput}/>
+            </div>
+          </div>
 
-          <CheckboxInput label='Create project team chat' />
+          
 
         </Card>
         {/* cancel and submit buttons */}
