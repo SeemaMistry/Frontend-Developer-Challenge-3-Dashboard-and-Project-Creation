@@ -1,6 +1,7 @@
 export const DUMMY_DATA = [
     {
         isButton: false,
+        buttonUrl: '',
         categoryTitle: 'Labs',
         tabs: [
             {id:'labs-tab1', tabTitle: 'My Labs', tabContent: 'No labs found.'},
@@ -9,6 +10,7 @@ export const DUMMY_DATA = [
     },
     {
         isButton: false,
+        buttonUrl: '',
         categoryTitle: 'Challenges',
         tabs: [
             {id:'challenges-tab1', tabTitle: 'My Challenges', tabContent: 'No challenges found.'},
@@ -18,6 +20,7 @@ export const DUMMY_DATA = [
     },
     {
         isButton: true,
+        buttonUrl: '/create/project',
         categoryTitle: 'Projects',
         tabs: [
             {id:'projects-tab1', tabTitle: 'My Projects', tabContent: 'No projects found.'},
