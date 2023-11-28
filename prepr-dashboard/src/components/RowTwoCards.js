@@ -5,6 +5,8 @@ import Description from './Description'
 import RedirectButton from './RedirectButton'
 import clipboardImg from '../assets/latest_achievement.png'
 import iconYellowBadge from '../assets/iconYellowBadge.png'
+import DropDownInput from './DropDownInput'
+import {organizationList, labsList, challengesList, sortByList} from './DropDownDummyData'
 
 const RowTwoCards = ({height}) => {
   const centerImage = 'mx-auto d-block'
@@ -12,8 +14,17 @@ const RowTwoCards = ({height}) => {
     <div className='row'>
     <div className='col-md-8'>
       <Card height={height}>
-        <span>Leader Board</span>
-        <RedirectButton label='View Leaderboard'/>
+        <div className='d-flex justify-content-between'>
+          <CardTitle title='Leaderboard' color='text-success'/>
+          <RedirectButton label='View Leaderboard'/>
+        </div>
+        <div className='d-sm-flex justify-content-between'>
+          <DropDownInput dropDownOptions={organizationList}/>
+          <DropDownInput dropDownOptions={labsList}/>
+          <DropDownInput dropDownOptions={challengesList}/>
+          <DropDownInput dropDownOptions={sortByList}/>
+          <a className='text-center my-auto'>Clear Filters</a>
+        </div>
       </Card>
     </div>
     <div className='col'>
