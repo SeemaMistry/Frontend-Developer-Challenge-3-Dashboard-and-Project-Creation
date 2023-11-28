@@ -1,8 +1,8 @@
 import React from 'react'
 
-const DropDownInput = ({dropDownOptions}) => {
+const DropDownInput = ({dropDownOptions, nameString, onSetFormInput}) => {
     const {label, defaultSelected, options} = dropDownOptions
-    const onChange = e => {console.log(e.target.value)}
+    const onChange = e => onSetFormInput(nameString, e.target.value)
     const textColor = 'text-secondary' 
 
   return (
