@@ -10,6 +10,7 @@ import {organizationList, labsList, challengesList, sortByList} from './DropDown
 
 const RowTwoCards = ({height}) => {
   const centerImage = 'mx-auto d-block'
+  const onChange = e => {}
   return (
     <div className='row'>
     <div className='col-md-8'>
@@ -19,10 +20,10 @@ const RowTwoCards = ({height}) => {
           <RedirectButton label='View Leaderboard'/>
         </div>
         <div className='d-sm-flex justify-content-between'>
-          <DropDownInput dropDownOptions={organizationList}/>
-          <DropDownInput dropDownOptions={labsList}/>
-          <DropDownInput dropDownOptions={challengesList}/>
-          <DropDownInput dropDownOptions={sortByList}/>
+          <DropDownInput dropDownOptions={organizationList} nameString='dummyString' onSetFormInput={onChange}/>
+          <DropDownInput dropDownOptions={labsList} nameString='dummyString' onSetFormInput={onChange}/>
+          <DropDownInput dropDownOptions={challengesList} nameString='dummyString' onSetFormInput={onChange}/>
+          <DropDownInput dropDownOptions={sortByList} nameString='dummyString' onSetFormInput={onChange}/>
           <a className='text-center my-auto'>Clear Filters</a>
         </div>
       </Card>
