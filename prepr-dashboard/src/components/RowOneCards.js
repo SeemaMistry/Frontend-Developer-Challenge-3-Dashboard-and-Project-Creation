@@ -64,7 +64,6 @@ const RowOneCards = ({height}) => {
               <span className='fw-bold'>Frontend Developer Challenge 1: Web Page Creation</span><br></br>
               <span className='text-secondary'>Due November 21 at 5:47PM</span>
             </p>
-            
           </div>
         </div>
         <hr></hr>
