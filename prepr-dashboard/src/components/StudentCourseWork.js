@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 import iconYellowBadge from '../assets/iconYellowBadge.png'
 import CardTitle from './CardTitle'
 import RedirectButton from './RedirectButton'
@@ -8,7 +9,7 @@ import challengeIcon from '../assets/challenge_icon.svg'
 import projectIcon from '../assets/project_icon.svg'
 
 const StudentCourseWork = ({boxContent}) => {
-    const {isButton, categoryTitle, tabs} = boxContent // destructure prop
+    const {isButton, buttonUrl, categoryTitle, tabs} = boxContent // destructure prop
     const icon = categoryTitle === 'Labs' ? labIcon : 
         categoryTitle === 'Challenges' ? challengeIcon : projectIcon
 
@@ -30,7 +31,14 @@ const StudentCourseWork = ({boxContent}) => {
                 <CardTitle title={categoryTitle} color='text-success'/>
                 </div>
             </div>
-            {isButton ? <div className=''><RedirectButton label='Create +'/></div> : <></>}
+            {isButton ? 
+                <div className=''>
+                    <button className='btn btn-success'>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to={buttonUrl}>Create +</Link>
+                    </button>
+                </div> 
+                : <></>
+            }
         </div>
 
         {/* buttons + content */}
