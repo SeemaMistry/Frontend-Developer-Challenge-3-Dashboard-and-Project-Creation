@@ -1,5 +1,4 @@
 import React from 'react'
-import Description from './Description'
 
 const DropDownInput = ({dropDownOptions}) => {
     const {label, defaultSelected, options} = dropDownOptions
