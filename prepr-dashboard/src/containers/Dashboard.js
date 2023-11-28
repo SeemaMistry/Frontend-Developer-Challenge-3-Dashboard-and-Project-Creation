@@ -10,8 +10,8 @@ const Dashboard = () => {
         <h3 className='fw-semibold'>Welcome, Seema. <a className='fw-normal link-success fs-5' href='#!'>Complete profile</a></h3>
       </div>
       <div className='bg-white p-4' style={{height: '100%'}}>
-        <RowOneCards height='25rem'/>
-        <RowTwoCards height='20rem'/>
+        <RowOneCards height='27rem'/>
+        <RowTwoCards height='25rem'/>
         <RowThreeCards height='40rem'/>
       </div>
     </div>
