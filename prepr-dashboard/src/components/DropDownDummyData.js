@@ -23,3 +23,15 @@ export const sortByList = {
     defaultSelected: 'Learning Points',
     options: ['Learning Rank', 'Achievements']
 }
+
+export const recruitingStatusList = {
+    label: 'Recruiting Status', 
+    defaultSelected: 'Select recruiting status for your Project',
+    options: ['Not currently recruiting', 'Currently recruiting']
+}
+
+export const requiredSkillsList = {
+    label: 'Required Skills', 
+    defaultSelected: 'Please code multiple inputs',
+    options: ['Please add data', 'Please add data']
+}
