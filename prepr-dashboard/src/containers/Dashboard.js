@@ -1,9 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import RowOneCards from '../components/RowOneCards'
 import RowTwoCards from '../components/RowTwoCards'
 import RowThreeCards from '../components/RowThreeCards'
 
-const Dashboard = () => {
+const Dashboard = ({projects}) => {
   return (
     <div className='container-fluid'>
       <div className='mb-4 mt-2'>
@@ -12,11 +13,16 @@ const Dashboard = () => {
       <div className='bg-white p-4' style={{height: '100%'}}>
         <RowOneCards height='27rem'/>
         <RowTwoCards height='27rem'/>
-        <RowThreeCards height='25rem'/>
+        <RowThreeCards height='25rem' state={projects}/>
       </div>
+
     </div>
 
   )
 }
 
-export default Dashboard
+const mapStateToProps = state => ({
+  projects: state
+})
+
+export default connect(mapStateToProps, null)(Dashboard)
