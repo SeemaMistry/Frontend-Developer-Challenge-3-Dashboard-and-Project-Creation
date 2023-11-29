@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Description from '../components/Description'
 import Card from '../components/Card'
@@ -7,6 +7,7 @@ import RedirectButton from '../components/RedirectButton'
 import TextInput from '../components/TextInput'
 import DropDownInput from '../components/DropDownInput'
 import CheckboxInput from '../components/CheckboxInput'
+import UploadImage from '../components/UploadImage'
 import { recruitingStatusList, requiredSkillsList, activeChallengesList, associatedLabsList } from '../components/DropDownDummyData'
 
 const CreateProject = () => {
@@ -18,18 +19,20 @@ const CreateProject = () => {
     imgURL: ''
   })
   const {title, description, activeChallenge, imgURL} = formData // destructure formData
-
-  const onSetFormInput = (formName, formValue) => 
-  setFormData({...formData, [formName]: formValue})
+  
+  const onSetFormInput = (formName, formValue) => setFormData({...formData, [formName]: formValue})
+  const onSaveImageUrl = imageURL => setFormData({...formData, imgURL: imageURL})
 
   return (
     <div className='container mt-4 bg-white p-4'>
       {/* heading */}
       <CardTitle title='CREATE PROJECT' color='text-secondary'/>
       <hr></hr>
+      
       {/* alert */}
       <div>alter goes here</div>
       <form>
+
         {/* project overview box */}
         <Card>
           <CardTitle title='Project Overview'/>
@@ -46,13 +49,15 @@ const CreateProject = () => {
             <DropDownInput dropDownOptions={associatedLabsList} nameString='labslist' onSetFormInput={onSetFormInput}/>
           </div>
           </div>
-         
         </Card>
+
         {/* upload banner image box */}
-        <Card>
+        <Card height='36rem'>
           <CardTitle title='Upload Project Banner'/>
           <Description description='Please select png, jpg or jpeg image with minimum dimension of width: 625px, height: 355px'/>
+          <UploadImage onSaveImageUrl={imgurl => onSaveImageUrl(imgurl)}/>
         </Card>
+
         {/* build your team box */}
         <Card>
           <CardTitle title='Build Your Team'/>
