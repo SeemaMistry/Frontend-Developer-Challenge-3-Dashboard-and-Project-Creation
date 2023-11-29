@@ -18,14 +18,14 @@ export const DUMMY_DATA = [
             {id:'challenges-tab3',tabTitle: 'Following', tabContent: 'No challenges followed.'}
         ]
     },
-    {
-        isButton: true,
-        buttonUrl: '/create/project',
-        categoryTitle: 'Projects',
-        tabs: [
-            {id:'projects-tab1', tabTitle: 'My Projects', tabContent: 'No projects found.'},
-            {id:'projects-tab2', tabTitle: 'Need to assess', tabContent: 'No projects to assess.'},
-            {id:'projects-tab3', tabTitle: 'Invited', tabContent: 'No pending Project invitations.'}
-        ]
-    },
+    // {
+    //     isButton: true,
+    //     buttonUrl: '/create/project',
+    //     categoryTitle: 'Projects',
+    //     tabs: [
+    //         {id:'projects-tab1', tabTitle: 'My Projects', tabContent: 'No projects found.'},
+    //         {id:'projects-tab2', tabTitle: 'Need to assess', tabContent: 'No projects to assess.'},
+    //         {id:'projects-tab3', tabTitle: 'Invited', tabContent: 'No pending Project invitations.'}
+    //     ]
+    // },
 ]
