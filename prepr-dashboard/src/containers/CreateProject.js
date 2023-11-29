@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Navigate} from 'react-router-dom'
+import {connect} from 'react-redux'
+import { create_project } from '../actions/project'
 import Description from '../components/Description'
 import Card from '../components/Card'
 import CardTitle from '../components/CardTitle'
@@ -10,7 +12,7 @@ import CheckboxInput from '../components/CheckboxInput'
 import UploadImage from '../components/UploadImage'
 import { recruitingStatusList, requiredSkillsList, activeChallengesList, associatedLabsList } from '../components/DropDownDummyData'
 
-const CreateProject = () => {
+const CreateProject = ({create_project}) => {
   // retireve project data to save for dashboard display
   const [formData, setFormData] = useState({
     title: '',
@@ -18,20 +20,32 @@ const CreateProject = () => {
     activeChallenge: '',
     imgURL: ''
   })
+  const [isDataValid, setIsDataValid] = useState(false)
   const {title, description, activeChallenge, imgURL} = formData // destructure formData
   
   const onSetFormInput = (formName, formValue) => setFormData({...formData, [formName]: formValue})
   const onSaveImageUrl = imageURL => setFormData({...formData, imgURL: imageURL})
 
+  const onSubmit = e => {
+    e.preventDefault()
+    // validate data 
+    if (title !== '' && description !== '' && activeChallenge !== '' && imgURL !== '') {
+      setIsDataValid(true)
+      const id = Math.random()
+      create_project(id, title, description, activeChallenge, imgURL)
+    }
+  }
+
   return (
     <div className='container mt-4 bg-white p-4'>
+      {isDataValid && <Navigate to='/dashboard' />}
       {/* heading */}
       <CardTitle title='CREATE PROJECT' color='text-secondary'/>
       <hr></hr>
 
       {/* alert */}
       <div>alter goes here</div>
-      <form>
+      <form onSubmit={onSubmit}>
 
         {/* project overview box */}
         <Card>
@@ -80,9 +94,10 @@ const CreateProject = () => {
           <RedirectButton label='' size='btn-lg'>
               <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Cancel</Link>
           </RedirectButton>
-          <RedirectButton label='' size='btn-lg'>
+          {/* <RedirectButton label='' size='btn-lg'>
             <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Create Project</Link>
-        </RedirectButton>
+        </RedirectButton> */}
+        <button className='btn btn-success btn-lg mt-3' type='submit'>Create Project</button>
         </div>
       </form>  
       <div className='my-5'></div>
@@ -90,4 +105,8 @@ const CreateProject = () => {
   )
 }
 
-export default CreateProject
+const mapStateToProps = state => ({
+  projects: state
+})
+
+export default connect(mapStateToProps, {create_project})(CreateProject)
