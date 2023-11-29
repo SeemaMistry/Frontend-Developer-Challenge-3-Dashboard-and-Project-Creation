@@ -28,7 +28,7 @@ const CreateProject = () => {
       {/* heading */}
       <CardTitle title='CREATE PROJECT' color='text-secondary'/>
       <hr></hr>
-      
+
       {/* alert */}
       <div>alter goes here</div>
       <form>
@@ -77,20 +77,15 @@ const CreateProject = () => {
         </Card>
         {/* cancel and submit buttons */}
         <div className='d-flex justify-content-evenly'>
-          <RedirectButton label=''>
+          <RedirectButton label='' size='btn-lg'>
               <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Cancel</Link>
           </RedirectButton>
-          <RedirectButton label=''>
-            <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Submit</Link>
+          <RedirectButton label='' size='btn-lg'>
+            <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Create Project</Link>
         </RedirectButton>
         </div>
       </form>  
-      <div>
-        <span>title: {title}</span><br></br>
-        <span>description: {description}</span><br></br>
-        <span>activeChallenge: {activeChallenge}</span><br></br>
-        <span>img: {imgURL}</span><br></br>
-      </div>
+      <div className='my-5'></div>
     </div>
   )
 }
