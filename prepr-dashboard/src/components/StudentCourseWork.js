@@ -8,7 +8,6 @@ import challengeIcon from '../assets/challenge_icon.svg'
 import projectIcon from '../assets/project_icon.svg'
 
 const StudentCourseWork = ({boxContent}) => {
-    // const [projectExists, setProjectExists] = useState(false)
     const {isButton, buttonUrl, categoryTitle, tabs} = boxContent // destructure prop
     const icon = categoryTitle === 'Labs' ? labIcon : 
         categoryTitle === 'Challenges' ? challengeIcon : projectIcon
@@ -57,10 +56,6 @@ const StudentCourseWork = ({boxContent}) => {
         </div>
         <div className='text-center mt-3' style={{height: '100px'}}>
             <Description description={tabContent}/>
-            {/* {tabContent === '' && <Description description='No projects found.'/>}
-            {/* {tabContent !== '' && <div>we have some states to render {tabs[0].tabContent[0].id}</div>} */}
-            {/* {tabContent && tabs[0].tabContent.map(p => <ProjectInfo title={p.title} description={p.description} activeChallenge={p.activeChallenge} imgURL={p.imgURL}/>)} */}
-            {/* {projectExists ? renderProjectComponent : <Description description='No projects found.'/>} */}
         </div>
         <div className='text-center p-2 bg-light rounded-top-0 rounded-4'>
            <p className='pt-3'> <RedirectButton label='Explore more'/></p>

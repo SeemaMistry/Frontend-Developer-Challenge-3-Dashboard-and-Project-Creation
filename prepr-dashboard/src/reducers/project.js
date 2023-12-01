@@ -3,15 +3,7 @@ import {
     CREATE_PROJECT_SUCCESS
 } from '../actions/types'
 
-const initialState = [
-    // {
-    //     id: 1,
-    //     title: "First project",
-    //     description: "This is the project description",
-    //     activeChallenge: "Create Project",
-    //     imgURL: "imgURL.png"
-    // },
-]
+const initialState = []
 
 export default function (state=initialState, action) {
     const {type, payload} = action

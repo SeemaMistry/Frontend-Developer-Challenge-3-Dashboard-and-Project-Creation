@@ -14,7 +14,7 @@ import testImg3 from '../assets/basic-bar-graph.png'
 
 
 const RowThreeCards = ({height, state}) => {
-
+  // create project-box content and pass State from redux store to tabs[0].tabContent
   const projectsBox = {
     isButton: true,
     buttonUrl: '/create/project',
@@ -24,24 +24,27 @@ const RowThreeCards = ({height, state}) => {
         {id:'projects-tab2', tabTitle: 'Need to assess', tabContent: 'No projects to assess.'},
         {id:'projects-tab3', tabTitle: 'Invited', tabContent: 'No pending Project invitations.'}
     ]
-}
-const icon = projectIcon
-// handle tab onClick events to render corresponding tab-content
-const [tabContent, setTabContent] = useState(projectsBox.tabs[0].tabContent)
+  }
+  const icon = projectIcon
+  // handle tab onClick events to render corresponding tab-content
+  const [tabContent, setTabContent] = useState(projectsBox.tabs[0].tabContent)
 
-const onTabContentHandler = (tabID) => {
-    // use tabID to set the tab content
-    setTabContent(projectsBox.tabs.filter(tab => tab.id === tabID)[0].tabContent)
-}
+  const onTabContentHandler = (tabID) => {
+      // use tabID to set the tab content
+      setTabContent(projectsBox.tabs.filter(tab => tab.id === tabID)[0].tabContent)
+  }
 
-
-let renderProjectComponent = ''
-if (projectsBox.tabs[0].tabContent.length > 0) {  
-  const projectsStateList = projectsBox.tabs[0].tabContent
-  const x = projectsStateList[0]
-  const selectedImg = x.imgURL === 'image.png' ? testImg1 : x.imgURL === 'Untitled.png' ? testImg2 : testImg3
-  renderProjectComponent = <ProjectInfo title={x.title} description={x.description} activeChallenge={x.activeChallenge} imgURL={selectedImg}/>
-}
+  // render newly-created project from Store on dashboard
+  let renderProjectComponent = ''
+  if (projectsBox.tabs[0].tabContent.length > 0) {  
+    // retireve project object as x
+    const projectsStateList = projectsBox.tabs[0].tabContent 
+    const x = projectsStateList[0]
+    // set image
+    const selectedImg = x.imgURL === 'image.png' ? testImg1 : x.imgURL === 'Untitled.png' ? testImg2 : testImg3
+    // render <ProjectInfo .../>
+    renderProjectComponent = <ProjectInfo title={x.title} description={x.description} activeChallenge={x.activeChallenge} imgURL={selectedImg}/>
+  }
   return (
     <div className='row'>
       {/* map each student-work-box content for labs, challenges */}
@@ -52,51 +55,49 @@ if (projectsBox.tabs[0].tabContent.length > 0) {
           </Card>
         </div>
       )}
-        <div  className='col-md-4'>
+      <div className='col-md-4'>
         <Card height={height}>
-        {/* heading */}
-        <div className='d-flex justify-content-between'>
-            <div className='d-flex justify-content-start'>
-                <img src={icon}/>
-                <div className='my-auto mx-2'>
-                <CardTitle title={projectsBox.categoryTitle} color='text-success'/>
-                </div>
-            </div>
-            {projectsBox.isButton ? 
-                <div className=''>
-                    <RedirectButton label=''>
-                        <Link style={{textDecoration: 'none', color: 'white'}} to={projectsBox.buttonUrl}>Create +</Link>
-                    </RedirectButton>
-                </div> 
-                : <></>
-            }
-        </div>
+          {/* heading */}
+          <div className='d-flex justify-content-between'>
+              <div className='d-flex justify-content-start'>
+                  <img src={icon}/>
+                  <div className='my-auto mx-2'>
+                    <CardTitle title={projectsBox.categoryTitle} color='text-success'/>
+                  </div>
+              </div>
+              {projectsBox.isButton ? 
+                  <div className=''>
+                      <RedirectButton label=''>
+                          <Link style={{textDecoration: 'none', color: 'white'}} to={projectsBox.buttonUrl}>Create +</Link>
+                      </RedirectButton>
+                  </div> 
+                  : <></>
+              }
+          </div>
 
-        {/* buttons + content */}
-        <div className='d-flex justify-content-evenly mt-2'>
-            {projectsBox.tabs.map(tab => 
-                <button 
-                    key={tab.id}
-                    id={tab.id} 
-                    className='btn btn-outline-success rounded-bottom-0 w-100'
-                    onClick={id => onTabContentHandler(tab.id)}
-                >
-                    {tab.tabTitle}
-                </button> 
-            )}
-            
-        </div>
-        <div className='text-center mt-3' style={{height: '100px'}}>
-          {renderProjectComponent === '' ? <Description description={tabContent}/> : renderProjectComponent}  
-        </div>
-        <div className='text-center p-2 bg-light rounded-top-0 rounded-4'>
-           <p className='pt-3'> <RedirectButton label='Explore more'/></p>
-        </div>
+          {/* buttons + content */}
+          <div className='d-flex justify-content-evenly mt-2'>
+              {projectsBox.tabs.map(tab => 
+                  <button 
+                      key={tab.id}
+                      id={tab.id} 
+                      className='btn btn-outline-success rounded-bottom-0 w-100'
+                      onClick={id => onTabContentHandler(tab.id)}
+                  >
+                      {tab.tabTitle}
+                  </button> 
+              )}
+              
+          </div>
+          <div className='text-center mt-3' style={{height: '100px'}}>
+            {renderProjectComponent === '' ? <Description description={tabContent}/> : renderProjectComponent}  
+          </div>
+          <div className='text-center p-2 bg-light rounded-top-0 rounded-4'>
+            <p className='pt-3'> <RedirectButton label='Explore more'/></p>
+          </div>
         </Card>
-    </div>
-    
-
-  </div> 
+      </div>
+    </div> 
   )
 }
 

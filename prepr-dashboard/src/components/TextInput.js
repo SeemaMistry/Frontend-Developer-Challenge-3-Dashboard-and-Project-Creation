@@ -6,17 +6,17 @@ const TextInput = ({onSetFormInput, label, value, name, placeholder, isRequired}
     }
   return (
     <div className='form-group'>
-    <label className='form-label mt-3 text-secondary'>{label}:</label>
-    <input
-      className='form-control'
-      type='text'
-      placeholder={placeholder}
-      onChange={onChange}
-      value={value}
-      name={name}
-      required={isRequired}
-    />
-  </div>
+      <label className='form-label mt-3 text-secondary'>{label}:</label>
+      <input
+        className='form-control'
+        type='text'
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+        name={name}
+        required={isRequired}
+      />
+    </div>
   )
 }
 

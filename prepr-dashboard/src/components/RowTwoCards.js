@@ -10,7 +10,8 @@ import {organizationList, labsList, challengesList, sortByList} from './DropDown
 
 const RowTwoCards = ({height}) => {
   const centerImage = 'mx-auto d-block'
-  const onChange = e => {}
+  const onChange = e => {} // filters in Leaderboard do nothing on change
+  
   return (
     <div className='row'>
     <div className='col-md-8'>

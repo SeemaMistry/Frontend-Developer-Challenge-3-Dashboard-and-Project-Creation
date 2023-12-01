@@ -1,8 +1,3 @@
-// export const languageList = {
-//     label: '', 
-//     defaultSelected: '',
-//     options:['English', 'French', 'Spanish', 'German']
-// }
 export const organizationList = {
     label: 'Organization', 
     defaultSelected: 'All Organizations',

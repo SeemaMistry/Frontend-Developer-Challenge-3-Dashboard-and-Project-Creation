@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Link, Navigate} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { create_project } from '../actions/project'
@@ -23,6 +23,7 @@ const CreateProject = ({create_project}) => {
   const [isDataValid, setIsDataValid] = useState(false)
   const {title, description, activeChallenge, imgURL} = formData // destructure formData
   
+  // set formData values to state
   const onSetFormInput = (formName, formValue) => setFormData({...formData, [formName]: formValue})
   const onSaveImageUrl = imageURL => setFormData({...formData, imgURL: imageURL})
 
@@ -85,18 +86,13 @@ const CreateProject = ({create_project}) => {
               <DropDownInput dropDownOptions={requiredSkillsList} nameString='requiredSkills' onSetFormInput={onSetFormInput}/>
             </div>
           </div>
-
-          
-
         </Card>
+        
         {/* cancel and submit buttons */}
         <div className='d-flex justify-content-evenly'>
           <RedirectButton label='' size='btn-lg'>
               <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Cancel</Link>
           </RedirectButton>
-          {/* <RedirectButton label='' size='btn-lg'>
-            <Link style={{textDecoration: 'none', color: 'white'}} to='/dashboard'>Create Project</Link>
-        </RedirectButton> */}
         <button className='btn btn-success btn-lg mt-3' type='submit'>Create Project</button>
         </div>
       </form>  
