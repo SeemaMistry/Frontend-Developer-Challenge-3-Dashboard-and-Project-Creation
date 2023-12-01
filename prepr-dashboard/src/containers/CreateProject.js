@@ -44,8 +44,6 @@ const CreateProject = ({create_project}) => {
       <CardTitle title='CREATE PROJECT' color='text-secondary'/>
       <hr></hr>
 
-      {/* alert */}
-      <div>alter goes here</div>
       <form onSubmit={onSubmit}>
 
         {/* project overview box */}
