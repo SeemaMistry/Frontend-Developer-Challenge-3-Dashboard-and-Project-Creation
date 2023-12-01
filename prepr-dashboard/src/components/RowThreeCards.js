@@ -53,7 +53,7 @@ if (projectsBox.tabs[0].tabContent.length > 0) {
         </div>
       )}
         <div  className='col-md-4'>
-
+        <Card height={height}>
         {/* heading */}
         <div className='d-flex justify-content-between'>
             <div className='d-flex justify-content-start'>
@@ -92,7 +92,9 @@ if (projectsBox.tabs[0].tabContent.length > 0) {
         <div className='text-center p-2 bg-light rounded-top-0 rounded-4'>
            <p className='pt-3'> <RedirectButton label='Explore more'/></p>
         </div>
+        </Card>
     </div>
+    
 
   </div> 
   )
