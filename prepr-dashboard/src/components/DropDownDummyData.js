@@ -32,8 +32,8 @@ export const recruitingStatusList = {
 
 export const requiredSkillsList = {
     label: 'Required Skills', 
-    defaultSelected: 'Please code multiple inputs',
-    options: ['Please add data', 'Please add data']
+    defaultSelected: 'Select skill',
+    options: ['Communication', 'Project Management', 'Teamwork']
 }
 
 export const activeChallengesList = {
